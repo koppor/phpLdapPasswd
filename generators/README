@@ -1,0 +1,10 @@
+This directory contains some sample password generation functions.  For more
+information about customizing password generators, please see the main README
+for phpLdapPasswd, or visit http://www.karylstein.com/.
+
+The following generation functions are included in this release of
+phpLdapPasswd:
+
+apg.php : (required apg) This uses the apg program to generate passwords.
+
+random.php : This uses the randchar() function to generate random strings.

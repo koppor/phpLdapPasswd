@@ -1,0 +1,13 @@
+A request has been made to reset your password.  Your new password is as
+follows:
+
+<!-- INSERT PHPLDAPPASSWD PASSWORD -->
+
+It is recommended that you change your password to something that you can
+remember as soon as possible.
+
+If you did not request the password reset, please reply to this message.  Be
+sure to include the following information in your email:
+
+Date: <!-- INSERT PHPLDAPPASSWD DATE -->
+Requesting IP: <!-- INSERT PHPLDAPPASSWD IP -->

@@ -1,0 +1,21 @@
+.phpLdapPasswdError {
+background:yellow;
+border:1px solid black;
+}
+
+.phpLdapPasswdSuccess {
+background:#00FF00;
+border:1px solid black;
+font-weight:bold;
+text-align:center;
+}
+
+.phpLdapPasswdForm {
+border:1px solid black;
+background:#CCCCCC;
+}
+
+.phpLdapPasswdSuggestions {
+border:1px solid black;
+background:#CCCCCC;
+}

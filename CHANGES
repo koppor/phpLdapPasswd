@@ -1,0 +1,41 @@
+26 Aug. 2004 - Version 0.5 Released
+
+* Added an option to allow an administrator to change anyone's password.
+
+25 Aug. 2004 - Version 0.4 Released
+
+* Added configurable template for error messages.
+* Fixed package so it works with register_globals off.
+* Added a password reset function.
+* Added check for allowed characters in user ID.
+* Fixed a bug where success messages were not displayed as pointed out by
+  Jubal Kessler.
+* Set default LDAP version to 3 for server communication.  Controlled by
+  configuration option.
+* Added ability to update shadowLastChange or similar attribute.
+* Made random.php password generation function work if included more than once.
+
+9 Aug. 2004 - Version 0.3 Released
+
+* Code and documentation clean up.  Pulled code into functions where possible.
+* Created a password generation system for suggesting passwords as well as
+  for future password reset functionality.  Added the random and apg example
+  generators.
+* Parse the entire template file instead of just until the first special tag.
+* Added new special tag to support password generation option and changed
+  existing special tag.
+* Added new special tags to display error and success messages.
+* Added a IDATTRIBUTE configuration variable to define what attribute on which
+  to search when looking up the user name.
+* Added encoding of passwords so they can be passed to the LDAP server in
+  SSHA form.  This is untested!
+
+19 Mar. 2004 - Version 0.2 Released
+
+* Added encoding of passwords so they can be passed to the LDAP server in
+  clear, crypt or MD5 forms.  Thanks to Yann Richard for pointing this out.
+* Added some CSS definitions.
+
+21 Sep. 2003 - Version 0.1 Released
+
+* Initial release

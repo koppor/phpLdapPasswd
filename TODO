@@ -1,0 +1,12 @@
+This is the TODO list for phpLdapPasswd.
+
+* Allow configuration of From/Reply-To heading in fatal error messages.
+* Fix fatal_error function so it properly parses template.  (Right now, it
+  prints the error message regardless of if the template asks for it.)
+* Secure configuration file, (e.g. put outside of web root).
+* Allow for custom help links for the input fields.
+* Create a search function that can take certain input information and return
+  a user ID, (e.g. for forgotten IDs).
+* Update documentation.
+* Put change last date in own function.
+* Combine email and form special tags, and add a tag for SYSADMINEMAIL.
