@@ -1,6 +1,6 @@
 phpLdapPasswd
-Version: 0.5
-Date: 26 Aug. 2004
+Version: (not yet released: plan: 0.6)
+Date: (not yet released)
 
 phpLdapPasswd is a system that allows certain password management functions
 to be initiated from a standard web browser.  As the name suggests,
@@ -9,6 +9,13 @@ functionality includes password changes and password resets.  Templates, CSS
 directives and external functions allow for a high degree of flexibility in
 how phpLdapPasswd looks and acts.  However, quick deployments are also possible
 by using the included default files and settings.
+
+
+OTHER SOFTWARE
+
+Simpler versions of a similar functionality are available at:
+ * https://gist.github.com/657334 - LDAP PHP Change Password Page
+ * https://github.com/arthurfurlan/php-ldap-passwd - php-ldap-passwd 
 
 
 INTRODUCTION

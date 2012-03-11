@@ -1,5 +1,7 @@
 This is the TODO list for phpLdapPasswd.
 
+* Allow configuring anonymous / non-anonmyous binding to LDAP directory
+  * See bind_anonymously()
 * Allow configuration of From/Reply-To heading in fatal error messages.
 * Fix fatal_error function so it properly parses template.  (Right now, it
   prints the error message regardless of if the template asks for it.)

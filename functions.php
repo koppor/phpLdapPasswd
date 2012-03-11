@@ -337,6 +337,20 @@ Please report this problem to the system administrator at
 	exit;
 }
 
+function bind_anonymously ($ds) {
+	// Bind anonymously to the directory.
+//	if (!($ldapbind = @ldap_bind($ds))) {
+//		fatal_error("Unable to bind anonymously to the directory.");
+//	}
+
+	global $RESETBINDDN;
+	global $RESETBINDPW;
+
+	// Bind to the directory.
+	if (!($ldapbind = @ldap_bind($ds, $RESETBINDDN, $RESETBINDPW))) {
+	   fatal_error("Unable to bind to directory.");
+	}
+}
 
 // ****************************************************************************
 // Function: get_dn
@@ -354,10 +368,7 @@ Please report this problem to the system administrator at
 function get_dn ($ds, $user) {
 	global $LDAPBASEDN, $IDATTRIBUTE;
 
-	// Bind anonymously to the directory.
-	if (!($ldapbind = @ldap_bind($ds))) {
-		fatal_error("Unable to bind anonymously to the directory.");
-	}
+        bind_anonymously($ds);
 
 	// Search for the user entry.
 	if (!($sr = @ldap_search($ds, "$LDAPBASEDN", "($IDATTRIBUTE=$user)", array("dn")))) {
@@ -409,10 +420,7 @@ function get_dn ($ds, $user) {
 //  is returned as an array even if only one value is found.
 // ****************************************************************************
 function get_value ($ds, $dn, $attribute) {
-	// Bind anonymously to the directory.
-	if (!($ldapbind = @ldap_bind($ds))) {
-		fatal_error("Unable to bind anonymously to the directory.");
-	}
+        bind_anonymously($ds);
 
 	// Search the user entry.
 	if (!($sr = @ldap_search($ds, $dn, "($attribute=*)", array("$attribute")))) {
