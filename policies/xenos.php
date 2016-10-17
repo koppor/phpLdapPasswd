@@ -37,17 +37,17 @@ function check_password ($password, $user) {
 
 	$count = strlen($password);
 
-	if (strlen(ereg_replace("[A-Z]", "", $password)) + $MINUPPER > $count) {
+	if (strlen(preg_replace("/[A-Z]/", "", $password)) + $MINUPPER > $count) {
 		$string = ($MINUPPER>1)?"characters":"character";
 		return("Password must contain at least $MINUPPER uppercase $string.");
 	}
 
-	if (strlen(ereg_replace("[a-z]", "", $password)) + $MINLOWER > $count) {
+	if (strlen(preg_replace("/[a-z]/", "", $password)) + $MINLOWER > $count) {
 		$string = ($MINLOWER>1)?"characters":"character";
 		return("Password must contain at least $MINLOWER lowercase $string.");
 	}
 
-	if (strlen(ereg_replace("[0-9]", "", $password)) + $MINNUMBER > $count) {
+	if (strlen(preg_replace("/[0-9]/", "", $password)) + $MINNUMBER > $count) {
 		$string = ($MINNUMBER>1)?"numbers":"number";
 		return("Password must contain at least $MINNUMBER $string.");
 	}
