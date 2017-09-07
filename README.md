@@ -1,4 +1,5 @@
-phpLdapPasswd
+# phpLdapPasswd [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Version: (not yet released: plan: 0.6)
 Date: (not yet released)
 
@@ -11,14 +12,14 @@ how phpLdapPasswd looks and acts.  However, quick deployments are also possible
 by using the included default files and settings.
 
 
-OTHER SOFTWARE
+## OTHER SOFTWARE
 
 Simpler versions of a similar functionality are available at:
  * https://gist.github.com/657334 - LDAP PHP Change Password Page
  * https://github.com/arthurfurlan/php-ldap-passwd - php-ldap-passwd 
 
 
-INTRODUCTION
+## INTRODUCTION
 
 Storing passwords in a central location such as an LDAP server can provide
 significant administrative benefits to an organization.  However, in order
@@ -40,13 +41,13 @@ phpLdapPasswd ships with a set of default settings that should allow for rapid
 deployment in order to get a feel for the software.
 
 
-DOWNLOADS
+## DOWNLOADS
 
 The current release of phpLdapPasswd can be retrieved in the software section
 on the web site http://www.karylstein.com/.
 
 
-PREREQUISITES
+## PREREQUISITES
 
 phpLdapPasswd has been reported as working on the following platforms:
 
@@ -68,7 +69,7 @@ description of using LDAP for user authentication may be found in the Documents
 section on the web site http://www.karylstein.com/.
 
 
-QUICK INSTALL
+## QUICK INSTALL
 
 The fastest way to get phpLdapPasswd operational is to follow the steps given
 below.  For more details about the installation of phpLdapPasswd, please see
@@ -111,7 +112,7 @@ Once the basic configuration is installed and working, the entire config.php
 file should be reviewed and edited as desired.
 
 
-INSTALLATION
+## INSTALLATION
 
 The first step in installing phpLdapPasswd is to download the most recent
 version of the software.  Please see the download section for more information
@@ -162,14 +163,14 @@ At this point, you should be able to load the phpLdapPasswd application in a
 web browser and test it out.
 
 
-USAGE
+## USAGE
 
 There are three main pieces that may be configured to fully integrate
 phpLdapPasswd into a web site.  These are the templates, the password policies,
 and the password generation function.
 
 
-Templates
+## Templates
 
 Templates are plain files that contain special tags in them to mark where data
 should be inserted.  The phpLdapPasswd program will read through a template and
@@ -178,53 +179,53 @@ whatever output phpLdapPasswd generates for the request.  There are templates
 for web pages and a template for a password reset email.  These are handled
 differently
 
-Web Page Templates
+## Web Page Templates
 
 The tags in web pages must appear on a line all by themselves.  Spaces or other
 white space are allowed before and/or after the tag, but no other character may
 appear on the line or else the tag will not be matched.  The available special
 tags for web pages are:
 
-<!-- INSERT PHPLDAPPASSWD ADMINFORM -->
+`<!-- INSERT PHPLDAPPASSWD ADMINFORM -->`
 Insert a form requesting a user ID, administrator DN and password, and new
 password.
 
-<!-- INSERT PHPLDAPPASSWD ERROR -->
+`<!-- INSERT PHPLDAPPASSWD ERROR -->`
 Insert any error messages for the current transaction.
 
-<!-- INSERT PHPLDAPPASSWD CHANGEFORM -->
+`<!-- INSERT PHPLDAPPASSWD CHANGEFORM -->`
 Insert a form requesting the user ID, old password and new password.
 
-<!-- INSERT PHPLDAPPASSWD PASSWORDSUGGESTIONS -->
+`<!-- INSERT PHPLDAPPASSWD PASSWORDSUGGESTIONS -->`
 Insert a list of suggested passwords.
 
-<!-- INSERT PHPLDAPPASSWD RESETFORM -->
+`<!-- INSERT PHPLDAPPASSWD RESETFORM -->`
 Insert a form requesting the user ID.
 
-<!-- INSERT PHPLDAPPASSWD SUCCESS -->
+`<!-- INSERT PHPLDAPPASSWD SUCCESS -->`
 Insert any success messages for the current transaction.
 
-Email Templates
+## Email Templates
 
 The tags in email templates may appear anywhere in the message and DO NOT have
 to be on a line by themselves.  The available special tags for email messages
 are:
 
-<!-- INSERT PHPLDAPPASSWD DATE -->
+`<!-- INSERT PHPLDAPPASSWD DATE -->`
 Insert the current server date.
 
-<!-- INSERT PHPLDAPPASSWD IP -->
+`<!-- INSERT PHPLDAPPASSWD IP -->`
 Insert the IP address of the person making the request as reported by the
 web server.
 
-<!-- INSERT PHPLDAPPASSWD PASSWORD -->
+`<!-- INSERT PHPLDAPPASSWD PASSWORD -->`
 Insert the new password.
 
 Some examples of templates may be found in the templates directory as found in
 the phpLdapPasswd distribution.
 
 
-CSS
+## CSS
 
 There are some CSS directives that may be defined in the web templates.  An
 example CSS file may be found in the templates directory.  The available class
@@ -237,7 +238,7 @@ phpLdapPasswdSuccess - The style used when printing a success message.
 phpLdapPasswdSuggestions - The style used when displaying password suggestions.
 
 
-Password Policies
+## Password Policies
 
 Password policies define how an acceptable password should look.  For example,
 a password may have to be a certain length, contain a certain number of upper
@@ -259,7 +260,7 @@ the various parameters.  However, if you want to perform more advanced checks,
 then a custom policy function will have to be generated.  This function is a
 standard PHP function and takes the following format:
 
-string check_password ($password, $userid)
+    string check_password ($password, $userid)
 
 The first argument to the function is the password to check.  The second
 argument is the user ID of the person changing their password.  The function
@@ -267,7 +268,7 @@ should return an error message if there is a problem with the check.  If the
 password is valid, then the function should not return anything.
 
 
-Password Generation
+## Password Generation
 
 Password generation is used when resetting passwords or when requested to
 create a list of recommended passwords.  In order to provide maximum
@@ -281,14 +282,14 @@ If you create a new function, please consider submitting it to the maintainers
 for inclusion in phpLdapPasswd.
 
 
-SUPPORT
+## SUPPORT
 
 phpLdapPasswd is released in the hopes that it may be useful for others, but
 USE AT YOUR OWN RISK.  phpLdapPasswd was written by Karyl F. Stein.  The
 official web page is http://www.karylstein.com/.
 
 
-CREDITS
+## CREDITS
 
 The initial idea for phpLdapPasswd came from http://logout.sh/computers/ldap/.
 
